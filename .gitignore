@@ -1,0 +1,12 @@
+# --- DATABASE ---
+# Don't ya ever share your live DB credentials!
+db.php
+
+# --- OS TRASH ---
+.DS_Store
+Thumbs.db
+
+# --- LOCAL DEV ---
+# If ya ever use a local test database (Just in case I use lolol)
+.vscode/
+.idea/
