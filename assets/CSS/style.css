@@ -1,0 +1,160 @@
+:root {
+    --neon-blue: #00d4ff;
+    --neon-green: #39ff14;
+    --deep-aero-blue: #0056b3;
+    --nav-text: #003366;
+}
+
+body {
+    margin: 0;
+    /* The core Frutiger Aero gradient: sky to lush grass */
+    background: linear-gradient(180deg, #ffffff 0%, #76e5ff 40%, #39ff14 100%);
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Logo & Header --- */
+.logo img {
+    height: 80px; /* Scaled to keep header clean */
+    width: auto;
+    display: block;
+    cursor: pointer;
+    /* Adding a subtle drop shadow to logo to make it pop against glass bg */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    /* Transparent glass effect */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* --- Hero Section (Removed White BG) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* Semi-transparent glass to let background show through */
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 5px solid var(--neon-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.hero-text {
+    flex: 1;
+    padding: 50px 8%;
+}
+
+.cursive-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: -15px;
+}
+
+.main-title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 70px;
+    color: var(--deep-aero-blue);
+    margin: 0;
+    /* This creates the "Neon" outline effect */
+    text-shadow: 0 0 10px rgba(255,255,255,0.8), 3px 3px 0px var(--neon-blue);
+}
+
+.hero-image {
+    flex: 2;
+    height: 500px;
+    border-left: 5px solid white; /* Classic Aero divider */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Saturating the landscape to match the neon vibe */
+    filter: saturate(1.4);
+}
+
+/* --- Welcome & Button --- */
+.welcome-section {
+    text-align: center;
+    padding: 100px 20px;
+    /* Clean transparent section */
+}
+
+.welcome-text {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 65px;
+    color: white;
+    text-shadow: 0 0 20px var(--deep-aero-blue);
+    margin-bottom: 50px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.aero-button {
+    /* High-gloss blue/green gradient */
+    background: linear-gradient(to bottom, #00d4ff 0%, #0056b3 100%);
+    border: 3px solid #ffffff;
+    padding: 22px 60px;
+    border-radius: 60px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4), inset 0 2px 6px rgba(255,255,255,0.8);
+    transition: all 0.4s ease;
+    display: inline-block; /* Essential for links acting as buttons */
+    text-align: center;
+}
+
+.aero-button:hover {
+    transform: scale(1.1) translateY(-5px);
+    background: linear-gradient(to bottom, var(--neon-green) 0%, #28a745 100%);
+    box-shadow: 0 0 30px var(--neon-green);
+}
+
+/* --- Footer --- */
+footer {
+    background: linear-gradient(to bottom, #0080ff, #003366);
+    padding: 80px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 100%); /* Adds a bubbly curve */
+}
+
+.visit-us {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 130px;
+    color: white;
+    -webkit-text-stroke: 2px var(--neon-blue);
+    text-shadow: 0 0 20px rgba(0,212,255,0.5);
+}
