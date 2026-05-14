@@ -1,0 +1,306 @@
+/* =========================================
+   1. GLOBAL & FRUTIGERO AERO CORE
+   ========================================= */
+:root {
+    --neon-blue: #00d4ff;
+    --neon-green: #39ff14;
+    --nav-text: #003366;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #46d5ff 45%, #20e000 100%);
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    
+    /* FIX: Lower the 0.4 to 0.15 or 0.2 for more transparency */
+    background: rgba(255, 255, 255, 0.2); 
+    
+    /* The magic Aero Glass effect */
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    
+    /* Adds that glossy top-border reflection */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+} 
+.logo img { height: 80px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+
+nav a {
+    color: var(--nav-text);
+    font-weight: 800;
+    font-size: 16px;
+    margin-left: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover { color: white; text-shadow: 0 0 10px var(--neon-blue); }
+
+/* STORE HEADER */
+.store-header { text-align: center; padding: 60px 0 20px; }
+
+.welcome-text {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 5.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+    
+    /* WHITE TEXT WITH GLOWING BLUE BORDER */
+    color: white;
+    -webkit-text-stroke: 3px var(--neon-blue); /* Blue border */
+    text-shadow: 
+        0 0 15px var(--deep-aero-blue),
+        0 0 30px var(--neon-blue),
+        0 0 45px rgba(0, 212, 255, 0.6),
+        0 2px 10px rgba(0, 0, 0, 0.4);
+    
+    /* SUBTLE PULSE */
+    animation: blueGlowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes blueGlowPulse {
+    0% { 
+        text-shadow: 
+            0 0 15px var(--deep-aero-blue),
+            0 0 30px var(--neon-blue),
+            0 0 45px rgba(0, 212, 255, 0.6),
+            0 2px 10px rgba(0, 0, 0, 0.4);
+        -webkit-text-stroke-width: 3px;
+    }
+    100% { 
+        text-shadow: 
+            0 0 20px var(--deep-aero-blue),
+            0 0 40px var(--neon-blue),
+            0 0 60px rgba(0, 212, 255, 0.8),
+            0 3px 12px rgba(0, 0, 0, 0.5);
+        -webkit-text-stroke-width: 3.2px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 3.8rem;
+        letter-spacing: 2px;
+        -webkit-text-stroke-width: 2.5px;
+    }
+}
+
+/* =========================================
+   PERFECT FRUTIGERO AERO BUTTONS
+   ========================================= */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.frutigero-btn {
+    /* MINIMAL DEFAULT OVERRIDE (no flash!) */
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    /* CONTAINER */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 60px;
+    border-radius: 32px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    
+    /* FRUTIGERO AERO - NO FLASH */
+    background: 
+        radial-gradient(ellipse 45% 35% at 20% 15%, rgba(255,255,255,0.85) 0%, transparent 55%),
+        linear-gradient(145deg, 
+            #f8fcff 0%, 
+            #f0faff 20%, 
+            #e8f4ff 45%, 
+            #d8ecff 75%, 
+            #c8e4ff 100%);
+    
+    /* CLEAN SHADOWS */
+    box-shadow: 
+        0 10px 25px rgba(0,85,170,0.3),
+        0 4px 12px rgba(0,0,0,0.18),
+        inset 0 2px 8px rgba(255,255,255,0.9),
+        inset 0 -2px 6px rgba(170,215,255,0.4);
+    
+    border: 3px solid transparent;
+    border-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.75)) 1;
+    
+    color: #003366;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.85);
+    
+    /* SMOOTH TRANSITION */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* SMOOTH SHIMMER (NO FLASH) */
+.frutigero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.4) 45%,
+        rgba(255,255,255,0.15) 55%,
+        transparent 100%);
+    transition: left 0.5s ease-out;
+    opacity: 1;
+    z-index: 2;
+}
+
+.frutigero-btn:hover::before { left: 100%; }
+
+/* PERMANENT SPECULAR HIGHLIGHT (NO FLASH) */
+.frutigero-btn::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    right: 15px;
+    height: 14px;
+    background: radial-gradient(ellipse 60% 60% at center, 
+        rgba(255,255,255,0.75) 0%, 
+        rgba(255,255,255,0.3) 60%, 
+        transparent 80%);
+    border-radius: 14px;
+    z-index: 1;
+}
+
+/* HOVER */
+.frutigero-btn:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 
+        0 22px 40px rgba(0,85,170,0.4),
+        0 8px 20px rgba(0,0,0,0.22),
+        inset 0 3px 10px rgba(255,255,255,0.95),
+        0 0 25px rgba(0,200,255,0.5);
+}
+
+/* ACTIVE GREEN */
+.frutigero-btn.active {
+    background: 
+        radial-gradient(ellipse 45% 35% at 20% 15%, rgba(255,255,255,0.9) 0%, transparent 55%),
+        linear-gradient(145deg, 
+            #f8fff2 0%, 
+            #f0fff8 20%, 
+            #e8ffe6 45%, 
+            #d8ffd0 75%, 
+            #c8ffc8 100%);
+    
+    color: #004400;
+    box-shadow: 
+        0 10px 25px rgba(50,255,50,0.45),
+        0 4px 12px rgba(0,0,0,0.18),
+        inset 0 2px 8px rgba(255,255,255,0.95),
+        0 0 25px rgba(50,255,50,0.75);
+}
+
+.frutigero-btn.active:hover {
+    box-shadow: 
+        0 22px 40px rgba(50,255,50,0.55),
+        0 8px 20px rgba(0,0,0,0.22),
+        inset 0 3px 10px rgba(255,255,255,1),
+        0 0 35px rgba(50,255,50,0.9);
+}
+
+/* PRESS */
+.frutigero-btn:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: transform 0.08s ease-out;
+}
+
+/* PRODUCTS */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 0 8% 100px;
+}
+
+.glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 40px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 2px 12px rgba(255,255,255,1);
+    min-height: 350px;
+}
+
+.item-gloss-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 50%);
+    border-radius: 37px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.1));
+    position: relative;
+    z-index: 1;
+}
+
+.stock-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 900;
+    border: 2px solid #fff;
+    margin-top: 15px;
+}
+
+.available { background: var(--neon-green); color: #004d00; box-shadow: 0 0 10px var(--neon-green); }
+.low-stock { background: #ffcc00; color: #554400; }
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.out-stock { 
+    background: #ff4757; 
+    color: white; 
+    box-shadow: 0 0 10px #ff4757; 
+}
