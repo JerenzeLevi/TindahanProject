@@ -1,0 +1,186 @@
+/* --- Frutiger Aero Admin Theme --- */
+:root {
+    --neon-blue: #00d4ff;
+    --neon-green: #39ff14;
+    --deep-aero-blue: #0056b3;
+    --nav-text: #003366;
+    --glass-white: rgba(255, 255, 255, 0.45);
+}
+
+body {
+    margin: 0;
+    /* The sky-to-lush-grass gradient you loved */
+    background: linear-gradient(180deg, #ffffff 0%, #76e5ff 40%, #39ff14 100%);
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--nav-text);
+}
+
+/* --- Bubble Container (The Dashboard Wrapper) --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--glass-white);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 50px; /* Extreme rounding for bubble feel */
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 10px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Glossy Bubble Headers --- */
+h1, h2, h3 {
+    font-family: 'Paytone One', sans-serif;
+    color: var(--deep-aero-blue);
+    text-shadow: 1px 1px 0px white, 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* --- The Add Product Form (Inner Bubble) --- */
+form {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.4);
+    margin-bottom: 40px;
+}
+
+/* --- Glossy Inputs --- */
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 25px; /* Pill shape */
+    border: 1px solid #a0e6ff;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--nav-text);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- The Aero Glossy Button --- */
+button {
+    background: linear-gradient(to bottom, #00d4ff 0%, #0056b3 100%);
+    border: 2px solid #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 212, 255, 0.3), inset 0 2px 5px rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    transform: scale(1.02) translateY(-3px);
+    background: linear-gradient(to bottom, var(--neon-green) 0%, #28a745 100%);
+    box-shadow: 0 10px 20px rgba(57, 255, 20, 0.4);
+}
+
+/* --- Product Grid & Cards --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 35px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 25px; /* Bubble image */
+    border: 3px solid white;
+    margin-bottom: 15px;
+}
+
+/* --- Delete Button (Red Bubble) --- */
+.delete-btn {
+    background: linear-gradient(to bottom, #ff6b6b, #c92a2a);
+    padding: 8px 20px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* --- Login Box Adjustment --- */
+.login-box {
+    max-width: 400px; /* Limits the bubble width */
+    margin: 100px auto; /* Centers the bubble on the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box; /* Crucial: keeps padding inside the width */
+}
+
+/* Ensure inputs don't try to be wider than the bubble */
+input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* --- Editable Grid Fixes (Dark Blue Theme) --- */
+
+.product-card label {
+    color: var(--nav-text) !important; /* Uses your #003366 */
+    font-weight: 800;
+    font-size: 11px;
+    margin-top: 5px;
+    display: block;
+}
+
+.edit-input {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid #a0e6ff !important;
+    color: var(--nav-text) !important;
+    border-radius: 10px !important; /* Slightly less round for the small grid boxes */
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    margin: 2px 0 !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: var(--neon-blue) !important;
+    background: #ffffff !important;
+}
+
+.card-controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Make the grid SAVE and DEL buttons smaller than the big ADD button */
+.save-btn, .del-btn {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+    height: auto !important;
+    width: auto !important;
+    flex: 1;
+}
